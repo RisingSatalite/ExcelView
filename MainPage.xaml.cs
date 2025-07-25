@@ -3,6 +3,8 @@
 public partial class MainPage : ContentPage
 {
 	int count = 0;
+	string selectedFile = "";
+	string[][] data = [[]];
 
 	public MainPage()
 	{
@@ -34,6 +36,8 @@ public partial class MainPage : ContentPage
 				string fileName = result.FileName;
 				// You can access the file stream with result.OpenReadAsync()
 				Console.WriteLine(fileName);
+				FileSelector.Text = $"Selected ({fileName})\nselect different file";
+				selectedFile = fileName;
 			}
 		}
 		catch (Exception ex)
