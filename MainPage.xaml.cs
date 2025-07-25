@@ -33,6 +33,7 @@ public partial class MainPage : ContentPage
 				// File was picked
 				string fileName = result.FileName;
 				// You can access the file stream with result.OpenReadAsync()
+				Console.WriteLine(fileName);
 			}
 		}
 		catch (Exception ex)

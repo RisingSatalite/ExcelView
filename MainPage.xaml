@@ -30,6 +30,8 @@
                 SemanticProperties.Hint="Selects file"
                 Clicked="SelectFile"
                 HorizontalOptions="Fill" />
+
+            <Grid></Grid>
         </VerticalStackLayout>
     </ScrollView>
 
