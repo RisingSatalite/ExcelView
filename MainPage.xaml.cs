@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
+	/*
 	private void OnCounterClicked(object? sender, EventArgs e)
 	{
 		count++;
@@ -20,8 +21,9 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+	*/
 
-	public async void SelectFile()
+	public async void SelectFile(object? sender, EventArgs e)
 	{
 		try
 		{
