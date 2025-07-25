@@ -31,7 +31,18 @@
                 Clicked="SelectFile"
                 HorizontalOptions="Fill" />
 
-            <Grid></Grid>
+            <CollectionView x:Name="CsvCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <!-- Bind dynamically to array items -->
+                            <Label Text="{Binding [0]}" Padding="5"/>
+                            <Label Text="{Binding [1]}" Padding="5"/>
+                            <Label Text="{Binding [2]}" Padding="5"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 
