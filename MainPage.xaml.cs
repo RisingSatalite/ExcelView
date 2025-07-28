@@ -41,8 +41,38 @@ public partial class MainPage : ContentPage
                 selectedFile = fileName;
                 filePath = result.FullPath;
                 var newData = ParseCsv(filePath);
-                CsvCollectionView.ItemsSource = newData;
                 data = newData; // Store the parsed data
+
+                // Save data to the Grid
+                int rows = newData.Count;
+                int cols = newData[0].Length;
+
+                // Define fixed rows/columns
+                CsvCollectionView.RowDefinitions.Clear();
+                CsvCollectionView.ColumnDefinitions.Clear();
+
+                for (int r = 0; r < rows; r++)
+                    CsvCollectionView.RowDefinitions.Add(new RowDefinition { Height = 50 });
+
+                for (int c = 0; c < cols; c++)
+                    CsvCollectionView.ColumnDefinitions.Add(new ColumnDefinition { Width = 100 });
+
+                // Add labels for each cell
+                for (int r = 0; r < rows; r++)
+                {
+                    for (int c = 0; c < cols; c++)
+                    {
+                        var label = new Label
+                        {
+                            Text = data[r][c],
+                            BackgroundColor = Colors.LightGray,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            VerticalTextAlignment = TextAlignment.Center
+                        };
+
+                        CsvCollectionView.Add(label, c, r); // column, row
+                    }
+                }
             }
         }
         catch (Exception ex)

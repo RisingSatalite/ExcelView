@@ -25,18 +25,26 @@
                 Clicked="SelectFile"
                 HorizontalOptions="Fill" />
 
-            <CollectionView x:Name="CsvCollectionView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <HorizontalStackLayout>
-                            <!-- Bind dynamically to array items -->
-                            <Label Text="{Binding [0]}" Padding="5"/>
-                            <Label Text="{Binding [1]}" Padding="5"/>
-                            <Label Text="{Binding [2]}" Padding="5"/>
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <Grid 
+                RowSpacing="0" 
+                ColumnSpacing="0"
+                x:Name="CsvCollectionView">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- First row -->
+                <Label Text="A1" Grid.Row="0" Grid.Column="0" BackgroundColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="B1" Grid.Row="0" Grid.Column="1" BackgroundColor="DarkBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="C1" Grid.Row="0" Grid.Column="2" BackgroundColor="DarkGreen" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
