@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
                 string fileName = result.FileName;
                 // You can access the file stream with result.OpenReadAsync()
                 Console.WriteLine(fileName);
-                FileSelector.Text = $"Selected ({fileName})\nselect different file";
+                FileSelector.Text = $"Selected ({fileName})\nSelect different file";
                 selectedFile = fileName;
                 filePath = result.FullPath;
                 var newData = ParseCsv(filePath);
@@ -45,7 +45,7 @@ public partial class MainPage : ContentPage
 
                 // Save data to the Grid
                 int rows = newData.Count;
-                int cols = newData[0].Length;
+                int cols = newData.Max(row => row.Length);
 
                 // Define fixed rows/columns
                 CsvCollectionView.RowDefinitions.Clear();
@@ -65,7 +65,7 @@ public partial class MainPage : ContentPage
                         var label = new Label
                         {
                             Text = data[r][c],
-                            BackgroundColor = Colors.LightGray,
+                            BackgroundColor = Colors.Black,
                             HorizontalTextAlignment = TextAlignment.Center,
                             VerticalTextAlignment = TextAlignment.Center
                         };

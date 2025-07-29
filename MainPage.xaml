@@ -28,7 +28,8 @@
             <Grid 
                 RowSpacing="0" 
                 ColumnSpacing="0"
-                x:Name="CsvCollectionView">
+                x:Name="CsvCollectionView"
+                BackgroundColor="Black">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
